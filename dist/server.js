@@ -33,6 +33,6 @@ app.use("/api/v1", routes_1.default);
 app.use(globalErrorHandler_1.globalErrorhandler);
 // local server port
 app.listen(port, () => {
-    console.log(`\x1b[33m  Server is running on port http://localhost:${port}  \x1b[0m`);
+    console.log(`Server is running on port http://localhost:${port}`);
 });
 //# sourceMappingURL=server.js.map
