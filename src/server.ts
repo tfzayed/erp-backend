@@ -21,7 +21,7 @@ var corsOptions = {
 
 // middleware
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/", (req: Request, res: Response) => {
   res.send("App running");
@@ -37,7 +37,5 @@ app.use(globalErrorhandler);
 
 // local server port
 app.listen(port, () => {
-  console.log(
-    `Server is running on port http://localhost:${port}`
-  );
+  console.log(`Server is running on port http://localhost:${port}`);
 });

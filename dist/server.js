@@ -22,7 +22,7 @@ var corsOptions = {
 };
 // middleware
 app.use(express_1.default.json());
-app.use((0, cors_1.default)(corsOptions));
+app.use((0, cors_1.default)());
 app.get("/", (req, res) => {
     res.send("App running");
 });
