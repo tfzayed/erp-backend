@@ -13,9 +13,15 @@ dotenv.config();
 const app: Application = express();
 const port: number | string = config.port || 5000;
 
+var corsOptions = {
+  origin: "https://erp-website-pearl.vercel.app",
+  optionsSuccessStatus: 200,
+  methods: "GET, PUT",
+};
+
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get("/", (req: Request, res: Response) => {
   res.send("App running");
