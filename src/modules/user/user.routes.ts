@@ -1,3 +1,4 @@
+import { checkToken } from "@/middlewares/checkToken";
 import express from "express";
 import { userController } from "./user.controller";
 
@@ -6,12 +7,12 @@ const userRouter = express.Router();
 // get user
 userRouter
   .route("/")
-  .get(userController.getAllUser)
-  .post(userController.postUser);
+  .get(checkToken, userController.getAllUser)
+  .post(checkToken, userController.postUser);
 
 userRouter
   .route("/:id")
-  .patch(userController.updateUser)
-  .delete(userController.deleteUser);
+  .patch(checkToken, userController.updateUser)
+  .delete(checkToken, userController.deleteUser);
 
 export default userRouter;
