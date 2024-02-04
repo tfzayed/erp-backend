@@ -1,12 +1,5 @@
 import mongoose, { Schema, model } from "mongoose";
-import {
-  Achievements,
-  Bank,
-  Contact,
-  Log,
-  UserModel,
-  UserType,
-} from "./user.type";
+import { Achievements, Bank, Contact, UserModel, UserType } from "./user.type";
 
 const BankSchema = new Schema<Bank>({
   bank_name: String,
@@ -26,12 +19,6 @@ const ContactSchema = new Schema<Contact>({
 
 const AchievementSchema = new Schema<Achievements>({
   name: String,
-  date: Date,
-  id: String,
-});
-
-const LogSchema = new Schema<Log>({
-  log: String,
   date: Date,
   id: String,
 });
@@ -81,9 +68,8 @@ const userSchema = new mongoose.Schema<UserType, UserModel>(
     banks: { type: [BankSchema] },
     note: { type: String },
 
-    // Emergency Contacts and Logs
+    // Emergency Contacts
     contacts: { type: [ContactSchema] },
-    logs: { type: [LogSchema] },
   },
   {
     timestamps: true,

@@ -61,7 +61,6 @@ const updateUser = catchAsync(async (req: Request, res: Response) => {
     note: req?.body.note,
 
     contacts: req?.body.contacts,
-    logs: req?.body.logs,
   };
 
   const updatedUser = await userService.updateUser(id, userData);

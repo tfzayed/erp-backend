@@ -44,11 +44,6 @@ const AchievementSchema = new mongoose_1.Schema({
     date: Date,
     id: String,
 });
-const LogSchema = new mongoose_1.Schema({
-    log: String,
-    date: Date,
-    id: String,
-});
 const userSchema = new mongoose_1.default.Schema({
     // Personal Information
     name: { type: String },
@@ -87,9 +82,8 @@ const userSchema = new mongoose_1.default.Schema({
     date: { type: Date, default: Date.now },
     banks: { type: [BankSchema] },
     note: { type: String },
-    // Emergency Contacts and Logs
+    // Emergency Contacts
     contacts: { type: [ContactSchema] },
-    logs: { type: [LogSchema] },
 }, {
     timestamps: true,
 });

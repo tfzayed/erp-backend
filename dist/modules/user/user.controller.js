@@ -65,7 +65,6 @@ const updateUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
         banks: req === null || req === void 0 ? void 0 : req.body.banks,
         note: req === null || req === void 0 ? void 0 : req.body.note,
         contacts: req === null || req === void 0 ? void 0 : req.body.contacts,
-        logs: req === null || req === void 0 ? void 0 : req.body.logs,
     };
     const updatedUser = yield user_service_1.userService.updateUser(id, userData);
     (0, sendResponse_1.sendResponse)(res, {

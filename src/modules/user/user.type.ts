@@ -22,12 +22,6 @@ export type Achievements = {
   id: string;
 };
 
-export type Log = {
-  log: string;
-  date: Date;
-  id: string;
-};
-
 export type UserType = {
   // Personal Information
   name: string;
@@ -72,9 +66,8 @@ export type UserType = {
   banks: Bank[];
   note: string;
 
-  // Emergency Contacts and Logs
+  // Emergency Contacts
   contacts: Contact[];
-  logs: Log[];
 };
 
 export type UserModel = Model<UserType, Record<string, unknown>>;
